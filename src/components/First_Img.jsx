@@ -7,7 +7,7 @@ function FirstImg() {
         src="https://www.mbanews.com.au/wp-content/uploads/2017/12/3605_Burwood-Campus-Gallery.jpg"
         alt="University"
         height={450}
-        width={2190}
+        width={2000}
       />
     </div>
   );
