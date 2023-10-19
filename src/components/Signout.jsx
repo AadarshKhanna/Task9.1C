@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { auth } from './utils/firebase'; // Import the Firebase auth instance
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import './Signout.css'; // Import your CSS file for styling
+import './Signout.css';
 
 function Signout() {
   const navigate = useNavigate();
@@ -17,9 +17,13 @@ function Signout() {
     }
   };
 
+  useEffect(() => { // Fixed the syntax error, use () instead of {}
+    window.history.replaceState(null, document.title, '/'); // Changed 'navigate' to 'history'
+  }, []);
+
   return (
     <div className="signout-container">
-      <h1>You have successfully logged in to the account</h1>
+      <h1>You have successfully logged out of the account</h1> {/* Corrected the message */}
       <button className="signout-button" onClick={handleSignOut}>Sign Out</button>
     </div>
   );
